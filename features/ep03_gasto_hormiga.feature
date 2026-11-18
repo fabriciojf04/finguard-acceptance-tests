@@ -71,3 +71,14 @@ Característica: Detección y análisis de gasto hormiga
     Cuando FinGuard captura a las 14:05 otro cobro del mismo comercio y monto
     Entonces ambos cobros se marcan como "Posible cobro duplicado"
     Y el usuario recibe un aviso para reclamar el reembolso
+    
+  @AT-20 @US08 @funcional
+  Esquema del escenario: Límite del monto para considerar gasto hormiga
+    Dado que el usuario realizó 3 gastos de S/ <monto> en "Bodega Don Lucho" en noviembre de 2026
+    Cuando el usuario abre el resumen de gasto hormiga
+    Entonces el acumulado mensual es S/ <acumulado>
+
+    Ejemplos:
+      | monto | acumulado |
+      | 20.00 | 60.00     |
+      | 20.01 | 0.00      |
