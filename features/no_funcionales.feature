@@ -46,3 +46,11 @@ Característica: Requisitos no funcionales de FinGuard
     Cuando cada uno completa la guía de permisos y activa la captura
     Entonces el tiempo promedio de configuración es menor a 120 segundos
     Y el proceso no supera 5 pantallas
+
+  @AT-20 @US34 @no-funcional @privacidad
+  Escenario: Al revocar el permiso, FinGuard deja de leer notificaciones
+    Dado que el permiso de lectura de notificaciones está activo
+    Cuando el usuario revoca el permiso desde los ajustes del teléfono
+    Y se envían 5 notificaciones de pago
+    Entonces FinGuard no registra ninguno de esos pagos
+    Y los gastos ya guardados siguen visibles en el historial
